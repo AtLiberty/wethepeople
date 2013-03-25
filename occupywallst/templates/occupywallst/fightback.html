@@ -1,0 +1,83 @@
+{% extends base %}
+{% load ows i18n l10n %}
+{% block title %}Occupy's Pledge to FIGHT BACK{% endblock title %}
+{% block description %}We didn't start the class war{% endblock description %}
+
+{% block content %}
+  <style>
+    #funtable td { vertical-align: top; }
+    .lefty h2 { margin-top: 0; color: #a00; }
+    .lefty { padding-right: 1em; }
+    .choices p { margin-top: 5px; margin-bottom: 0; padding-left: 25px; text-indent: -25px; }
+    input[type="text"] { padding: 0.3em; width: 200px; }
+    h3 small { font-weight: normal; font-size: 14px; }
+    .formtbl { margin-top: 1em; }
+    .formtbl th { text-align: right; font-weight: bold; width: 120px; }
+    .formtbl th, .formtbl td { padding: 5px; }
+    input[type="submit"] { font-weight: bold; padding: 0.5em 1em; }
+    acronym { border-bottom: 1px dotted black; cursor: help; }
+    #pledges p { font-size: 12px; border-bottom: 1px solid #e9e9e9; padding: 0 0 0.5em 0; margin: 0 0 0.5em 0; }
+    #pledges p a { color: black; }
+    #pledges p:last-child { border-bottom: none; }
+    #pledges p small { font-size: 9px; color: #666; }
+    #pledges .viewmore { font-weight: bold; font-size: 14px; }
+  </style>
+
+  <table id="funtable" width="100%">
+  <tr><td class="lefty">
+
+  <h1>Occupy's Pledge to FIGHT BACK</h1>
+  <h2>We Didn’t Start the Class War</h2>
+  <p>The 1% wreck our economy, kill our jobs, seize our homes, assault our rights, destroy the environment, and sentence us to lives of debt and war. For years, we have petitioned our governments for change without redress and have fought tirelessly to elect politicians who only betray us. In a world where the 1% have usurped democracy and politicians refuse to serve the people, the people have but one choice—<em>to fight back!</em></p>
+  <p>The relentless class war against the 99% must end. We’ve been deceived our whole lives into believing the only way to create change is by voting, but now we’re learning there’s another way. A revolution for real democracy is underway, and it falls on each and every one of us to fight together for our common future. We will cast the vote of resistance. We will take <a href="http://en.wikipedia.org/wiki/Direct_action">direct action</a> to shut this broken system down and build a better world that works in the interest of all people, everywhere.</p>
+
+  <h3>Will you help us wage resistance? <small>(Check off all that apply)</small></h3>
+
+  <form action="." method="post">
+    {{ form.non_field_errors }}
+
+    <div class="choices">
+      <p>{{ form.streets }} <label for="id_streets">I pledge to come out in the streets when Occupy calls for a day of action.</label></p>
+      <p>{{ form.meet }} <label for="id_meet">I pledge to attend at least one meeting with my local Occupy group.</label><br/> <small><a title="Occupy Together" href="http://occupytogether.org/">Click Here</a> to find one in your area</small></p>
+      <p>{{ form.social }} <label for="id_social">I pledge to help promote #occupy news and actions via social media.</label></p>
+      <p>{{ form.donate }} <label for="id_donate">I pledge to <strong>donate</strong> what I make in one hour to an Occupy-related project.</label><br/> <small><a "Donate | OccupyWallSt.org" href="/donate/">Click Here</a> for our curated list of places to donate</small></p>
+      <p>{{ form.strike }} <label for="id_strike">I pledge to never go to work during a <a href="http://pink-scare.blogspot.com/2011/10/what-is-general-strike.html">general strike</a>.</label></p>
+      <p>{{ form.organize }} <label for="id_organize">I pledge to help organize my co-workers to make demands. It doesn’t matter if I’m behind a desk, a cash register, or a machine—we deserve better treatment.</label><br/> <small><a title="Organizing Department | Industrial Workers of the World" href="http://www.iww.org/en/organize">Click Here</a> to learn how</small></p>
+      <p>{{ form.train }} <label for="id_train">I pledge to attend a direct action / civil disobedience training session.</label><br/> <small><a title="Summer Disobedience School" href="http://www.facebook.com/SummerDisobedienceSchool">Click Here</a> for NYC Summer Disobedience School</small><br /> <small><a title="USDOR | Non Violent Civil Disobedience Training Talks" href="http://www.youtube.com/playlist?list=PL1B2CF32B0727D3EC">Click Here</a> for online video training</small></p>
+      <p>{{ form.bank }} <label for="id_bank">I pledge to dump my bank and join a credit union.</label><br/> <small><a title="Credit Union Locator" href="http://moveyourmoneyproject.org/find-bankcredit-union">Click Here</a> to find one in your area</small></p>
+      <p>{{ form.occupy }} <label for="id_occupy">I pledge to start an <a href="http://en.wikipedia.org/wiki/Affinity_group">affinity group</a> to <em>occupy</em> something.</label><br/> <small>This can be just about <em>anything</em>. Like a park, a <a href="http://www.takebackthetract.com/">farm</a>, defending a foreclosed <a href="http://occupyourhomes.org/">home</a>, or holding a sit-in at your town hall or school. You might only need a half dozen or so dedicated people. Issue demands if you like, but don't go home until they're met. You can even use <a title="Zine: Delia Smith's Basic Blockading" href="http://occupywallst.org/media/pdf/blockadingforbegineers.pdf">blockading</a> to make it extra hard for them to remove you. Remember: Occupying is a <em>militant nonviolent</em> tactic meant to assert control over physical space by reclaiming it for a new purpose while disrupting the ability of your adversary to use that space, thus <em>forcing</em> recognition of your cause. You don't need a permit any more than Martin Luther King Jr. needed permission to hold sit-ins at lunch counters. This is the very meaning of <a href="http://sunsite.berkeley.edu/Literature/Thoreau/CivilDisobedience.html">civil disobedience</a>, but it also means you'll be risking arrest so you should consider seeking <a href="http://www.nlg.org/resources/referral-directory/">legal counsel</a> beforehand. How much does <em>change</em> mean to you?</small></p>
+    </div>
+
+    <table class="formtbl" width="100%"><tr>
+      <th><label for="id_name">Your Name</label></th>
+      <td>{{ form.name.errors }} {{ form.name }}</td>
+    </tr><tr>
+      <th></th>
+      <td>{{ form.is_public }} <label for="id_is_public">Allow others to see my name and what I pledged</label></td>
+    </tr><tr>
+      <th><label for="id_email">Email</label></th>
+      <td>{{ form.email.errors }} {{ form.email }}</td>
+    </tr><tr>
+      <th style="font-weight:normal"><label for="id_zipcode">Postal Code</label></th>
+      <td>{{ form.zipcode.errors }} {{ form.zipcode }}</td>
+    </tr><tr>
+      <th></th>
+      <td><input type="submit" value="Sign the Pledge"/></td>
+    </tr></table>
+  </form>
+
+  <p class="tinygray">* We will not share your email address.</p>
+
+  </td><td width="320" class="righty">
+
+  <a href="http://i.imgur.com/UVMC9.jpg"><img title="Doc Bloc at #N17 (Photo Credit: Erik R. McGregor)" alt="Doc Bloc at #N17 (Photo Credit: Erik R. McGregor)" src="http://i.imgur.com/UVMC9m.jpg" width="320" height="212"/></a>
+  <h3>{{ count }} people have signed the pledge</h3>
+  <div id="pledges">
+    {% for signature in signatures %}
+      <p><a href="/fightback/{{ signature.id }}/"><strong>{{ signature.name }}</strong> pledged to {{ signature.describe_pledges }} <small>{{ signature.created|timesince_short }} ago</small></a></p>
+    {% endfor %}
+    <a class="viewmore" href="/fightback/all/">View More</a>
+  </div>
+
+  </td></tr></table>
+{% endblock content %}
